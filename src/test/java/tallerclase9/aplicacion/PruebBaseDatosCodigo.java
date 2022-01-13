@@ -4,6 +4,7 @@ import java.util.List;
 
 import tallerclase9.domain.Alumno;
 import tallerclase9.domain.DatosDBMemoria;
+import tallerclase9.domain.Materia;
 
 public class PruebBaseDatosCodigo {
 
@@ -13,6 +14,11 @@ public class PruebBaseDatosCodigo {
 		List<Alumno> listaalumnos= bd.getBdAlumnos();
 		for(Alumno e : listaalumnos) {
 			System.out.println(e.getNombre());
+		}
+		List<Materia> listaMaterias = bd.getBdMaterias();
+		
+		for(Materia e: listaMaterias) {
+			System.out.println(e.getCurso()+"  "+ e.getTurno());
 		}
 	}
 

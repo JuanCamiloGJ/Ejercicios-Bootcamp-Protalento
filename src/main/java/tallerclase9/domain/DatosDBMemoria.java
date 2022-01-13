@@ -18,6 +18,37 @@ public class DatosDBMemoria {
 		bdAlumnos.add(alumno1);
 		alumno1 = new Alumno(4, "Maria", "Yara", 4);
 		bdAlumnos.add(alumno1);
+		
+		Materia materia1 = new Materia(10, "Español", "Mañana");
+		bdMaterias.add(materia1);
+		
+		materia1 = new Materia(20, "Ingles", "Mañana");
+		bdMaterias.add(materia1);
+		
+		materia1 = new Materia(30, "Matematicas", "Mañana");
+		bdMaterias.add(materia1);
+		
+		materia1 = new Materia(40, "Programación", "Mañana");
+		bdMaterias.add(materia1);
+		
+		materia1 = new Materia(50, "Economia", "Mañana");
+		bdMaterias.add(materia1);
+		
+		Materia materia2 = new Materia(15, "Español", "Tarde");
+		bdMaterias.add(materia2);
+		
+		materia2 = new Materia(25, "Ingles", "Tarde");
+		bdMaterias.add(materia2);
+		
+		materia2 = new Materia(35, "Matematicas", "Tarde");
+		bdMaterias.add(materia2);
+		
+		materia2 = new Materia(45, "Programación", "Tarde");
+		bdMaterias.add(materia2);
+		
+		materia2 = new Materia(55, "Economia", "Tarde");
+		bdMaterias.add(materia2);
+		
 	}
 	
 	public List<Alumno> getBdAlumnos() {
