@@ -11,6 +11,8 @@ public class PruebBaseDatosCodigo {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		DatosDBMemoria bd= new DatosDBMemoria();
+		
+		bd.setRegistro(new Alumno(8, "Pedro", "Ponte", 34));
 		List<Alumno> listaalumnos= bd.getBdAlumnos();
 		for(Alumno e : listaalumnos) {
 			System.out.println(e.getNombre());

@@ -1,5 +1,7 @@
 package tallerclase9.domain;
 
+import java.util.Objects;
+
 public class Alumno implements Entity {
 	private Integer id;
 	private String nombre;
@@ -46,6 +48,23 @@ public class Alumno implements Entity {
 	}
 	public void setMatricula(Integer matricula) {
 		this.matricula = matricula;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, matricula);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Alumno other = (Alumno) obj;
+		return Objects.equals(id, other.id) && Objects.equals(matricula, other.matricula);
 	}
 	
 	

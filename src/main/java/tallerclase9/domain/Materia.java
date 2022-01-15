@@ -1,5 +1,7 @@
 package tallerclase9.domain;
 
+import java.util.Objects;
+
 public class Materia implements Entity {
     private Integer id;
 	private String curso;
@@ -35,6 +37,25 @@ public class Materia implements Entity {
 	}
 	public void setTurno(String turno) {
 		this.turno = turno;
+	}
+
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Materia other = (Materia) obj;
+		return Objects.equals(id, other.id);
 	}
 	
 	
