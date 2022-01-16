@@ -25,7 +25,7 @@ public class MenuServiceImpl {
 		Boolean loop = true;
 		do {
 			System.out.println("¿Que desea realizar?");
-			System.out.println(" 1.Inscribir\n 2.Eliminar Inscripcion o Alumno \n 3.Buscar Inscripcion \n 4.Crear Alumno");
+			System.out.println(" 1.Inscribir\n 2.Eliminar Inscripcion o Alumno \n 3.Buscar Inscripcion \n 4.Crear Alumno \n 5.Salir");
 			opc = teclado.nextInt();
 
 			switch (opc) {
@@ -49,6 +49,9 @@ public class MenuServiceImpl {
 			case 4:
 				crearAlumno(teclado);
 				loop = false;
+				break;
+			case 5:
+				System.exit(0);
 				break;
 			default:
 				loop = true;
