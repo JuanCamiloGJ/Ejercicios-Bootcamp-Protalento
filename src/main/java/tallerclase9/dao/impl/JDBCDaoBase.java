@@ -47,7 +47,7 @@ public class JDBCDaoBase<T extends Entity> implements GenericDao<T> {
 	@Override
 	public void delete(T entity) {
 		// TODO Auto-generated method stub
-		
+		BD.delete(entity);
 	}
 
 	@Override

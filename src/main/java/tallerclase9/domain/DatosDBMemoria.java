@@ -1,10 +1,11 @@
 package tallerclase9.domain;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-public class DatosDBMemoria<R> {
+public class DatosDBMemoria<R>  {
 
 	// LinkedList para ahorrarme los datos duplicados recuerda
 	private  List<Alumno> bdAlumnos = new LinkedList<Alumno>();
@@ -136,6 +137,29 @@ public class DatosDBMemoria<R> {
 			return null;
 		}
 		return null;
+	}
+	public void delete(R Entity) {
+		if(Entity.getClass().equals(AlumnoPorMateria.class)) {
+			System.out.println("entro");
+			AlumnoPorMateria ins= (AlumnoPorMateria) Entity;
+			Iterator<AlumnoPorMateria> itr= inscripcion.iterator();
+			AlumnoPorMateria insList=null;
+			while(itr.hasNext()) {
+			insList=itr.next();
+				if(insList.getId().equals(ins.getId())) {
+					itr.remove();
+				};
+				
+			}
+		}else if(Entity.getClass().equals(Alumno.class)) {
+			Alumno alm = (Alumno)Entity;
+			Iterator<Alumno> itr = bdAlumnos.iterator();
+			while(itr.hasNext()) {
+				if(itr.next().getId().equals(alm.getId())) {
+					itr.remove();
+				}
+			}
+		}
 	}
 
 }
