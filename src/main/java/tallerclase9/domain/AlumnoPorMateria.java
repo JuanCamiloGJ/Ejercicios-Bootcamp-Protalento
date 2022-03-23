@@ -19,13 +19,11 @@ public class AlumnoPorMateria implements Entity {
 		this.idMatricula = idMatricula;
 	}
 
-	@Override
 	public Integer getId() {
 		// TODO Auto-generated method stub
 		return id;
 	}
 
-	@Override
 	public void setId(Integer id) {
 		// TODO Auto-generated method stub
 		this.id = id;

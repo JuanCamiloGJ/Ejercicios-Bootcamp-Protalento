@@ -21,7 +21,7 @@ public class JDBCDaoBase<T extends Entity> implements GenericDao<T> {
 	public void establecerbd(DatosDBMemoria<T> BD) {
 		this.BD=BD;
 	}
-	@Override
+	
 	public void save(T entity) {
 		// TODO Auto-generated method stub
 		
@@ -32,25 +32,25 @@ public class JDBCDaoBase<T extends Entity> implements GenericDao<T> {
 		
 	}
 
-	@Override
+	
 	public T findId(Integer id) {
 		// TODO Auto-generated method stub
 		return BD.findId(id, clazz);
 	}
 
-	@Override
+	
 	public void update(T entity) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
+	
 	public void delete(T entity) {
 		// TODO Auto-generated method stub
 		BD.delete(entity);
 	}
 
-	@Override
+
 	public List findAll(T entity) {
 		// TODO Auto-generated method stub
 		

@@ -25,26 +25,26 @@ public class AbstractBaseService<T> implements GenericService<T> {
 		genericDao.save(entity);
 	}
 
-	@Override
+
 	public T findId(Integer id) {
 		// TODO Auto-generated method stub
 		
 		return genericDao.findId(id);
 	}
 
-	@Override
+	
 	public void update(T entity) {
 		// TODO Auto-generated method stub
 		genericDao.update(entity);
 	}
 
-	@Override
+	
 	public void delete(T entity) {
 		// TODO Auto-generated method stub
 		genericDao.delete(entity);
 	}
 
-	@Override
+	
 	public List findAll(T entity) {
 		// TODO Auto-generated method stub
 		return genericDao.findAll(entity);
