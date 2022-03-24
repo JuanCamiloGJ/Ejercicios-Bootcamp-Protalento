@@ -7,4 +7,12 @@
   </parent>
   <artifactId>TallerWEB</artifactId>
   <packaging>war</packaging>
+  
+  
+  
+  <dependencies>
+  
+  	
+
+  </dependencies>
 </project>
