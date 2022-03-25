@@ -15,16 +15,22 @@
 	<modules>
 
 
-	<module>TallerWEB</module>
+		<module>TallerWEB</module>
 	</modules>
 	<dependencies>
-	<dependency>
+		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.28</version>
-	</dependency>
-  	
-  	<!-- librerias -->
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.23</version>
+		</dependency>
+		<!-- librerias -->
 		<!-- jsp/servlet -->
 		<!-- https://mvnrepository.com/artifact/javax.servlet.jsp/javax.servlet.jsp-api -->
 		<dependency>

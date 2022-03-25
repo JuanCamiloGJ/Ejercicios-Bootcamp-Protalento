@@ -8,6 +8,8 @@ import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 
+import tallerclase41.domain.Persona;
+
 public class CargarValidar {
 	
 	private String nombre = null;
@@ -42,11 +44,11 @@ public class CargarValidar {
 		
 		
 		if(
-			this.nombre.equals("") || 
-			this.apellido.equals("") ||
-			this.documento.equals("") ||
-			this.edad.equals(null) ||
-			this.ocupacion.equals("") ||
+			this.nombre.isBlank() || 
+			this.apellido.isBlank()||
+			this.documento.isBlank() ||
+			this.edad.isBlank() ||
+			this.ocupacion.isBlank() ||
 			this.f_nacimiento.equals(null)
 		) {
 			
@@ -57,5 +59,16 @@ public class CargarValidar {
 		
 		
 		
+	}
+	
+	public Persona getPersona() throws Exception {
+		Persona persona = null;
+		if(!this.isEmpty()) {
+			persona = new Persona(nombre, apellido, ocupacion, Integer.parseInt(edad) , Integer.parseInt(documento), f_nacimiento);
+		}else {
+			throw new Exception("La persona tiene datos vacios o null");
+		}
+		
+		return persona;
 	}
 }
