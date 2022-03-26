@@ -36,8 +36,8 @@ public class DatosServlet extends HttpServlet {
 				getServletContext().getRequestDispatcher("/error.jsp").forward(req, resp);
 				
 			}
-			
-			if( persona.create(nuevapersona)) {
+			Boolean estado = persona.create(nuevapersona);
+			if( estado ) {
 				System.out.println("Registro insertado");
 				getServletContext().getRequestDispatcher("/success.jsp").forward(req, resp);					
 			}else {

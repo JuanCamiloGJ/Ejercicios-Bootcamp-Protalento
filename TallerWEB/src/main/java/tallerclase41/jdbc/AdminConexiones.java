@@ -14,7 +14,7 @@ public class AdminConexiones {
 		String driverName = "org.postgresql.Driver";
 		
 		try {
-			Class.forName(driverName);
+			java.lang.Class.forName(driverName);
 			Connection connection = DriverManager.getConnection(urlhost, user, password);
 			return connection;
 		} catch (Exception e) {

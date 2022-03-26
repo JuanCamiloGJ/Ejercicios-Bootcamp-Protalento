@@ -21,7 +21,7 @@ public class PersonaDaoImpl implements PersonaDao {
 	@Override
 	public Boolean create(Persona persoan) {
 		// TODO Auto-generated method stub
-		String sql = "INSERT INTO personas ( nombre, apellido, ocupacion, edad, documento, fechaNacimiento ) VALUES ( ?, ?, ?, ?, ?, ?);";
+		String sql = "INSERT INTO personas (nombre, apellido, ocupacion, edad, documento, fechan) VALUES ( ?, ?, ?, ?, ?, ?);";
 		Boolean estado=false;
 		try(Connection con = AdminConexiones.obtenerConexion();
 			PreparedStatement ps = con.prepareStatement(sql);
@@ -31,7 +31,7 @@ public class PersonaDaoImpl implements PersonaDao {
 			ps.setString(3, persoan.getOcupacion());
 			ps.setInt(4, persoan.getEdad());
 			ps.setInt(5, persoan.getDocumento());
-			ps.setDate(6, (Date) persoan.getFechaNacimiento());
+			ps.setDate(6, new java.sql.Date(persoan.getFechaNacimiento().getTime()));
 			
 			estado = ps.execute();
 			
