@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import tallerclase41.Utilitarias.CargarValidar;
 import tallerclase41.domain.Persona;
+import tallerclase41.service.GenericService;
 import tallerclase41.service.PersonaService;
 import tallerclase41.service.impl.PersonaServiceImpl;
 
@@ -37,7 +38,7 @@ public class DatosServlet extends HttpServlet {
 				
 			}
 			Boolean estado = persona.create(nuevapersona);
-			if( estado ) {
+			if( !estado ) {
 				System.out.println("Registro insertado");
 				getServletContext().getRequestDispatcher("/success.jsp").forward(req, resp);					
 			}else {
@@ -53,6 +54,6 @@ public class DatosServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//resp.getWriter().print("Hola funciona");
+		
 	}
 }

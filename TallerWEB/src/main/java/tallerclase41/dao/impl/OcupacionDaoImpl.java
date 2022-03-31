@@ -1,29 +1,25 @@
-package tallerclase41.service.impl;
+package tallerclase41.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
-import tallerclase41.dao.GenericDao;
-import tallerclase41.dao.PersonaDao;
-import tallerclase41.dao.impl.PersonaDaoImpl;
+
+import tallerclase41.dao.OcupacionDao;
 import tallerclase41.domain.Ocupacion;
 import tallerclase41.domain.Persona;
 import tallerclase41.jdbc.AdminConexiones;
-import tallerclase41.service.GenericService;
-import tallerclase41.service.PersonaService;
 
-public class PersonaServiceImpl implements PersonaService{
-	PersonaDao persona = new PersonaDaoImpl();
+public class OcupacionDaoImpl implements OcupacionDao{
+
 	@Override
-	public List<Persona> findAll() {
+	public List<Ocupacion> findAll() {
 		// TODO Auto-generated method stub
-		List<Persona> personas = new ArrayList<>();
-		String sql = "SELECT * FROM personas";
+		List<Ocupacion> ocupaciones = new ArrayList<>();
+		String sql = "SELECT * FROM ocupaciones";
 		
 		try(Connection con = AdminConexiones.obtenerConexion();
 			PreparedStatement ps = con.prepareStatement(sql);
@@ -32,8 +28,7 @@ public class PersonaServiceImpl implements PersonaService{
 			
 			while(rs.next()) {
 				
-				personas.add(new Persona(rs.getString(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getInt(5), rs.getDate(6)));
-				//Persona(String nombre, String apellido, String ocupacion, Integer edad, Integer documento,Date fechaNacimiento)
+				ocupaciones.add(new Ocupacion(rs.getInt(1), rs.getString(2)));
 			}
 			
 		} catch (SQLException e) {
@@ -44,17 +39,17 @@ public class PersonaServiceImpl implements PersonaService{
 			e.printStackTrace();
 		}
 		
-		return personas;
+		return ocupaciones;
 	}
 
 	@Override
-	public Boolean create(Persona persoan) {
+	public Boolean create(Ocupacion persoan) {
 		// TODO Auto-generated method stub
-		return persona.create(persoan);
+		return null;
 	}
 
 	@Override
-	public Boolean update(Persona persona) {
+	public Boolean update(Ocupacion persona) {
 		// TODO Auto-generated method stub
 		return null;
 	}

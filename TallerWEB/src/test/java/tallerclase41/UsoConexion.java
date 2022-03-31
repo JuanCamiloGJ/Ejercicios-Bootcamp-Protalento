@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import tallerclase41.domain.Persona;
-import tallerclase41.service.PersonaService;
+import tallerclase41.service.GenericService;
 import tallerclase41.service.impl.PersonaServiceImpl;
 
 public class UsoConexion {
@@ -22,7 +22,7 @@ public class UsoConexion {
 		}
 		Persona pj  = new Persona("pedro", "diaz", "jardinero", 35, 12345678, f_nacimiento);
 
-		PersonaService persona = new PersonaServiceImpl();
+		GenericService persona = new PersonaServiceImpl();
 		persona.create(pj);
 		System.out.println("Registro exitoso");
 		

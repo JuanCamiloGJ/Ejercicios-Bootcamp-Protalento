@@ -6,11 +6,12 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
+import tallerclase41.dao.GenericDao;
 import tallerclase41.dao.PersonaDao;
 import tallerclase41.domain.Persona;
 import tallerclase41.jdbc.AdminConexiones;
 
-public class PersonaDaoImpl implements PersonaDao {
+public class PersonaDaoImpl implements PersonaDao{
 
 	@Override
 	public List<Persona> findAll() {
