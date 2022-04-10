@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar TallerPractica15/target/classes:target/dependency/webapp-runner.jar --port $PORT TallerPractica15/target/*.war
+web: java $JAVA_OPTS -jar TallerPractica15/target/dependency/webapp-runner.jar --port $PORT TallerPractica15/target/*.war
