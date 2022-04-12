@@ -10,9 +10,10 @@
 <link href="<%=request.getContextPath()%>/css/bootstrap.min.css"
 	rel="stylesheet">
 
+
 <title>Imagenes</title>
 </head>
-<body>
+<body style="background-color: #DCDDEE;">
 	<%Collection<Imagen> img = (Collection<Imagen>)request.getAttribute("imagenes"); 
 	
 	if(img == null || img.isEmpty()){
@@ -25,11 +26,14 @@
 		
 		<div id="carouselExampleControls" class="carousel slide"
 			data-bs-ride="carousel">
-			<div class="carousel-inner">
+			<div class="carousel-inner ">
 				<%
 				boolean first = true;
 				for(Imagen aux : img){
 				
+					if(!aux.getActivo()){
+						break;
+					}
 				
 				%>
 				<% 
@@ -37,13 +41,16 @@
 				
 				%>
 				<div class="carousel-item active">
-					
-					<img src="<%=aux.getImagen()%>" class="d-block w-100; img-thumbnail" alt="...">
+					<div class="d-flex justify-content-center">
+					<img src="<%=aux.getImagen()%>" class="d-block w-100; img-thumbnail; rounded" alt="<%=aux.getDescripcion()%>" width="1000px">
+					</div>
 				</div>
 				<%first = false;
 				}else{ %>	
 				<div class="carousel-item">
-					<img src="<%=aux.getImagen()%>" class="d-block w-100; img-thumbnail" alt="...">
+					<div class="d-flex justify-content-center">
+					<img src="<%=aux.getImagen()%>" class="d-block w-100; img-thumbnail; rounded" alt="<%=aux.getDescripcion()%> " width="1000px" >
+					</div>
 				</div>
 				
 				<%
@@ -66,6 +73,18 @@
 	</div>
 
 <%} %>
+<br>
+	<div class="container-fluid>">
+	<form action="<%=request.getContextPath()%>/ListadoImagenesServlet" method="post">
+	<div class="d-flex justify-content-center">
+	
+	<button type="submit" class="btn btn-dark">Listar Imagenes</button>
+	</div>
+	</form>
+	
+	</div>
+
+	
 	<!-- JavaScript Bundle with Popper -->
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

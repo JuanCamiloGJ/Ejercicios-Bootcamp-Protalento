@@ -6,4 +6,6 @@ public interface BaseDao <T> {
 	
 	
 	public Collection<T> findAll() throws Exception;
+	
+	public Boolean update(T entity) throws Exception;
 }

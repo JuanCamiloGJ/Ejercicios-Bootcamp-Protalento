@@ -35,4 +35,26 @@ public class ImagenDaoImpl implements ImagenDao {
 		return imagenescarrousel;
 	}
 
+	@Override
+	public Boolean update(Imagen entity) throws Exception {
+		// TODO Auto-generated method stub
+		String sql = "UPDATE carrousel SET descripcion=?, imagen=?, activo=? WHERE id=?";
+		Boolean estado=true;
+		Imagen imagen = entity;
+		try(Connection con = AdminConexiones.obtenerConexion();
+			PreparedStatement ps = con.prepareStatement(sql)){
+			ps.setString(1, imagen.getDescripcion());
+			ps.setString(2, imagen.getImagen());
+			ps.setBoolean(3, imagen.getActivo());
+			ps.setInt(4, imagen.getId());
+			
+			estado = Boolean.parseBoolean(ps.executeUpdate()+"");
+			
+		}catch(Exception e) {
+			throw  new Exception("No pudo actualizar los datos de la imagen", e);
+		}
+		
+		return estado;
+	}
+
 }
