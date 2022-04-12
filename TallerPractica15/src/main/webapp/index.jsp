@@ -14,12 +14,14 @@
 <title>Imagenes</title>
 </head>
 <body style="background-color: #DCDDEE;">
+	
 	<%Collection<Imagen> img = (Collection<Imagen>)request.getAttribute("imagenes"); 
 	
 	if(img == null || img.isEmpty()){
+		%>
+		<jsp:forward page="/CarrouselServlet"></jsp:forward>
 		
-		response.sendRedirect(request.getContextPath()+"/CarrouselServlet");
-		out.print("es null o vacio");
+		<%
 	}else{
 	%>
 	<div class="container-fluid">
