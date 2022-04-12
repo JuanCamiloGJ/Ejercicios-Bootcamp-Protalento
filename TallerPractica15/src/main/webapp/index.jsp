@@ -19,7 +19,7 @@
 	
 	if(img == null || img.isEmpty()){
 		%>
-		<jsp:forward page="/CarrouselServlet"></jsp:forward>
+		<jsp:forward page="/carrousel.jsp"></jsp:forward>
 		
 		<%
 	}else{
