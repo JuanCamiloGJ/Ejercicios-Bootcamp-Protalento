@@ -28,10 +28,10 @@ public class CarrouselServlet extends HttpServlet {
 		
 		if(imagenes != null || imagenes.isEmpty()) {
 		 req.setAttribute("imagenes", imagenes);
-		 getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
+		 getServletContext().getRequestDispatcher("/carrousel.jsp").forward(req, resp);
 		}else {
 		req.setAttribute("imagenes", imagenes);
-		getServletContext().getRequestDispatcher("/index.jsp").forward(req, resp);
+		getServletContext().getRequestDispatcher("/carrousel.jsp").forward(req, resp);
 		}
 	}
 	@Override
