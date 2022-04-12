@@ -78,7 +78,7 @@
 	<form action="<%=request.getContextPath()%>/ListadoImagenesServlet" method="post">
 	<div class="d-flex justify-content-center">
 	
-	<button type="submit" class="btn btn-dark">Listar Imagenes</button>
+	<button type="submit" class="btn btn-dark">Listar Imagenes URL</button>
 	</div>
 	</form>
 	
