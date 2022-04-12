@@ -17,7 +17,7 @@
 	
 	<%Collection<Imagen> img = (Collection<Imagen>)request.getAttribute("imagenes"); 
 	
-	if(img == null){
+	if(img == null || img.isEmpty()){
 		%>
 		<jsp:forward page="/CarrouselServlet"></jsp:forward>
 		
