@@ -17,13 +17,7 @@
 	
 	<%
 	Collection<Imagen> img = (Collection<Imagen>)request.getAttribute("imagenes"); 
-	
-	if(img == null || img.isEmpty()){
-		%>
-		
-		<jsp:forward page="/index.jsp"></jsp:forward>
-		<%
-	}else{
+
 	%>
 	<div class="container-fluid">
 		
@@ -75,7 +69,7 @@
 		</div>
 	</div>
 
-<%} %>
+
 <br>
 	<div class="container-fluid>">
 	<form action="<%=request.getContextPath()%>/ListadoImagenesServlet" method="post">
