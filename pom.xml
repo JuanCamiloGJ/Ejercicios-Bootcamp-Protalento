@@ -17,6 +17,7 @@
 
 		<module>TallerWEB</module>
 		<module>TallerPractica15</module>
+		<module>TallerPractica17</module>
 	</modules>
 	<dependencies>
 		<dependency>
